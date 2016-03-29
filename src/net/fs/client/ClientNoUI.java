@@ -36,13 +36,13 @@ import net.miginfocom.swing.MigLayout;
 import com.alibaba.fastjson.JSONObject;
 
 public class ClientNoUI implements ClientUII{
-	
+
 	MapClient mapClient;
-	
+
 	ClientConfig config;
-	
+
 	String configFilePath="client_config.json";
-	
+
 	ClientNoUI(){
 		loadConfig();
 		Route.localDownloadSpeed=config.downloadSpeed;
@@ -51,7 +51,7 @@ public class ClientNoUI implements ClientUII{
 //		mapClient.setUi(this);
 //		mapClient.setMapServer(config.getServerAddress(), config.getServerPort(),config.getRemotePort()	,config.getPasswordMd5(),config.getPasswordMd5_Proxy(),config.isDirect_cn());
 	}
-	
+
 	void openUrl(String url){
 		try {
 			Desktop.getDesktop().browse(new URI(url));
@@ -61,11 +61,11 @@ public class ClientNoUI implements ClientUII{
 			e1.printStackTrace();
 		}
 	}
-	
+
 	public void setMessage(String message){
 		//MLog.info("状态: "+message);
 	}
-	
+
 	ClientConfig loadConfig(){
 		ClientConfig cfg=new ClientConfig();
 		if(!new File(configFilePath).exists()){
@@ -96,7 +96,7 @@ public class ClientNoUI implements ClientUII{
 		}
 		return cfg;
 	}
-		
+
 	public static String readFileUtf8(String path) throws Exception{
 		String str=null;
 		FileInputStream fis=null;
@@ -134,7 +134,7 @@ public class ClientNoUI implements ClientUII{
 
 		return str;
 	}
-	
+
 	void saveFile(byte[] data,String path) throws Exception{
 		FileOutputStream fos=null;
 		try {
@@ -148,7 +148,7 @@ public class ClientNoUI implements ClientUII{
 			}
 		}
 	}
-	
+
 	public void updateUISpeed(int conn,int downloadSpeed,int uploadSpeed){
 //		String string="连接数:"+conn+" 下载:"+Tools.getSizeStringKB(downloadSpeed)+"/S"
 //				+" 上传:"+Tools.getSizeStringKB(uploadSpeed)+"/S";
@@ -163,38 +163,38 @@ public class ClientNoUI implements ClientUII{
 		button.setFocusPainted(false);
 		return button;
 	}
-	
-	
+
+
 	void initUI(){
 		SwingUtilities.invokeLater(new Runnable() {
 
 			public void run() {
-				Font font = new Font("宋体",Font.PLAIN,12);   
-				UIManager.put("ToolTip.font",font);   
-				UIManager.put("Table.font",font);   
-				UIManager.put("TableHeader.font",font);   
-				UIManager.put("TextField.font",font);   
-				UIManager.put("ComboBox.font",font);   
-				UIManager.put("TextField.font",font);   
+				Font font = new Font("宋体",Font.PLAIN,12);
+				UIManager.put("ToolTip.font",font);
+				UIManager.put("Table.font",font);
+				UIManager.put("TableHeader.font",font);
+				UIManager.put("TextField.font",font);
+				UIManager.put("ComboBox.font",font);
+				UIManager.put("TextField.font",font);
 				UIManager.put("PasswordField.font",font);
 				UIManager.put("TextArea.font,font",font);
 				UIManager.put("TextPane.font",font);
-				UIManager.put("EditorPane.font",font);   
-				UIManager.put("FormattedTextField.font",font);   
-				UIManager.put("Button.font",font);   
-				UIManager.put("CheckBox.font",font);   
-				UIManager.put("RadioButton.font",font);   
-				UIManager.put("ToggleButton.font",font);   
-				UIManager.put("ProgressBar.font",font);   
-				UIManager.put("DesktopIcon.font",font);   
-				UIManager.put("TitledBorder.font",font);   
-				UIManager.put("Label.font",font);   
-				UIManager.put("List.font",font);   
-				UIManager.put("TabbedPane.font",font);   
-				UIManager.put("MenuBar.font",font);   
-				UIManager.put("Menu.font",font);   
-				UIManager.put("MenuItem.font",font);   
-				UIManager.put("PopupMenu.font",font);   
+				UIManager.put("EditorPane.font",font);
+				UIManager.put("FormattedTextField.font",font);
+				UIManager.put("Button.font",font);
+				UIManager.put("CheckBox.font",font);
+				UIManager.put("RadioButton.font",font);
+				UIManager.put("ToggleButton.font",font);
+				UIManager.put("ProgressBar.font",font);
+				UIManager.put("DesktopIcon.font",font);
+				UIManager.put("TitledBorder.font",font);
+				UIManager.put("Label.font",font);
+				UIManager.put("List.font",font);
+				UIManager.put("TabbedPane.font",font);
+				UIManager.put("MenuBar.font",font);
+				UIManager.put("Menu.font",font);
+				UIManager.put("MenuItem.font",font);
+				UIManager.put("PopupMenu.font",font);
 				UIManager.put("CheckBoxMenuItem.font",font);
 				UIManager.put("RadioButtonMenuItem.font",font);
 				UIManager.put("Spinner.font",font);
@@ -202,7 +202,7 @@ public class ClientNoUI implements ClientUII{
 				UIManager.put("ToolBar.font",font);
 				UIManager.put("OptionPane.messageFont",font);
 				UIManager.put("OptionPane.buttonFont",font);
-				
+
 				ToolTipManager.sharedInstance().setInitialDelay(200);
 			}
 

@@ -123,7 +123,6 @@ public class MapClient implements Trafficlistener{
 					} catch (InterruptedException e1) {
 						e1.printStackTrace();
 					}
-					updateUISpeed();
 				}
 			}
 		};
@@ -137,12 +136,7 @@ public class MapClient implements Trafficlistener{
 		return mapClient;
 	}
 
-	private void updateUISpeed(){
-		if(ui!=null){
-			ui.updateUISpeed(connNum,netStatus.getDownSpeed(),netStatus.getUpSpeed());
-		}
-	}
-	
+
 	public void setMapServer(String serverAddress,int serverPort,int remotePort,String passwordMd5,String password_proxy_Md5,boolean direct_cn,boolean tcp,
 			String password){
 		if(this.serverAddress==null

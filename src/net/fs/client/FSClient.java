@@ -22,7 +22,7 @@ public class FSClient {
 
         boolean visible=!commandLine.hasOption("b");
         boolean min=commandLine.hasOption("min");
-        
+
         new ClientUI(visible,min);
     }
 }
