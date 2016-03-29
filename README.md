@@ -1,4 +1,4 @@
-# 删除finalspeed对awt/swing的依赖，使之可以在没有x11的环境下，在命令行中直接运行
+### 删除finalspeed对awt/swing的依赖，使之可以在没有x11的环境下，在命令行中直接运行
 
 	具体方法:
 	java -jar finalspeed.jar -b
