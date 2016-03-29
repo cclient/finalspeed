@@ -1,4 +1,9 @@
+# 删除finalspeed对awt/swing的依赖，使之可以在没有x11的环境下，在命令行中直接运行
+
+	具体方法:
+	java -jar finalspeed.jar -b
 # FinalSpeed
+
 FinalSpeed是高速双边加速软件,可加速所有基于tcp协议的网络服务,在高丢包和高延迟环境下,仍可达到90%的物理带宽利用率,即使高峰时段也能轻松跑满带宽.
 
 ### 安装教程
