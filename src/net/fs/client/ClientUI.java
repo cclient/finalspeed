@@ -27,7 +27,6 @@ import net.fs.rudp.Route;
 import net.fs.utils.LogOutputStream;
 import net.fs.utils.MLog;
 import net.fs.utils.Tools;
-import net.miginfocom.swing.MigLayout;
 
 import com.alibaba.fastjson.JSONObject;
 
@@ -64,10 +63,7 @@ public class ClientUI implements ClientUII {
 
     String errorMsg = "保存失败请检查输入信息!";
 
-
-    MapRuleListModel model;
-
-    public MapRuleListTable tcpMapRuleListTable;
+//    public MapRuleListTable tcpMapRuleListTable;
 
     boolean capSuccess = false;
     Exception capException = null;
@@ -89,8 +85,6 @@ public class ClientUI implements ClientUII {
     String updateUrl;
     
     boolean min=false;
-    
-    LogFrame logFrame;
     
     LogOutputStream los;
     
@@ -119,10 +113,6 @@ public class ClientUI implements ClientUII {
         ui = this;
         checkQuanxian();
         loadConfig();
-
-        model = new MapRuleListModel();
-        tcpMapRuleListTable = new MapRuleListTable(this, model);
-
 
 
         String server_addressTxt = config.getServerAddress();
@@ -223,13 +213,6 @@ public class ClientUI implements ClientUII {
         });
 
         setSpeed(config.getDownloadSpeed(), config.getUploadSpeed());
-
-
-        loadMapRule();
-
-
-
-        
     }
 
     void checkFireWallOn() {
@@ -353,16 +336,7 @@ public class ClientUI implements ClientUII {
         }
     }
 
-    void loadMapRule() {
-        tcpMapRuleListTable.setMapRuleList(mapClient.portMapManager.getMapList());
-    }
 
-    void select(String name) {
-        int index = model.getMapRuleIndex(name);
-        if (index > -1) {
-            tcpMapRuleListTable.getSelectionModel().setSelectionInterval(index, index);
-        }
-    }
 
     void setSpeed(int downloadSpeed, int uploadSpeed) {
         config.setDownloadSpeed(downloadSpeed);
