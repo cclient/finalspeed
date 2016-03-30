@@ -80,7 +80,6 @@ public class PortMapProcess implements ClientProcessorInterface{
 
 				Route.es.execute(new Runnable() {
 
-					@Override
 					public void run() {
 						long t=System.currentTimeMillis();
 						p2.setDstPort(dstPort);
@@ -102,7 +101,6 @@ public class PortMapProcess implements ClientProcessorInterface{
 
 				Route.es.execute(new Runnable() {
 
-					@Override
 					public void run() {
 						try {
 							p1.pipe(srcIs, tos,200*1024,p2);
@@ -167,7 +165,6 @@ public class PortMapProcess implements ClientProcessorInterface{
 		}
 	}
 
-	@Override
 	public void onMapClientClose() {
 		try {
 			srcSocket.close();

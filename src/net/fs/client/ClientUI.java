@@ -206,7 +206,6 @@ public class ClientUI implements ClientUII {
 
         Route.es.execute(new Runnable() {
 
-            @Override
             public void run() {
                 checkUpdate();
             }
@@ -512,13 +511,11 @@ public class ClientUI implements ClientUII {
 
 
 
-    @Override
     public boolean login() {
         return false;
     }
 
 
-    @Override
     public boolean updateNode(boolean testSpeed) {
         return true;
 

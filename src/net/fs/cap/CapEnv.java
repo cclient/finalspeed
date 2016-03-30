@@ -243,7 +243,6 @@ public class CapEnv {
 			final PcapHandle handle= nif.openLive(SNAPLEN, getMode(nif), READ_TIMEOUT);
 
 			final PacketListener listener= new PacketListener() {
-				@Override
 				public void gotPacket(Packet packet) {
 
 					try {
@@ -294,7 +293,6 @@ public class CapEnv {
 				final PcapHandle handle = pi.openLive(SNAPLEN, getMode(pi), READ_TIMEOUT);
 				handleTable.put(pi, handle);
 				final PacketListener listener= new PacketListener() {
-					@Override
 					public void gotPacket(Packet packet) {
 
 						try {
@@ -473,8 +471,7 @@ public class CapEnv {
 		for(int i=0;i<5;i++){
 			try {
 				Route.es.execute(new Runnable() {
-					
-					@Override
+
 					public void run() {
 						try {
 							Socket socket=new Socket(testIp_tcp,por);

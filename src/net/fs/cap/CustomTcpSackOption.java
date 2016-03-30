@@ -156,7 +156,6 @@ public final class CustomTcpSackOption implements TcpOption {
     }
   }
 
-  @Override
   public TcpOptionKind getKind() {
     return kind;
   }
@@ -173,12 +172,12 @@ public final class CustomTcpSackOption implements TcpOption {
    */
   public int getLengthAsInt() { return 0xFF & length; }
 
-  @Override
+
   public int length() {
     return sacks.size() * INT_SIZE_IN_BYTES * 2 + 2;
   }
 
-  @Override
+
   public byte[] getRawData() {
     byte[] rawData = new byte[length()];
     rawData[0] = kind.value();
@@ -287,13 +286,11 @@ public final class CustomTcpSackOption implements TcpOption {
       return this;
     }
 
-    @Override
     public Builder correctLengthAtBuild(boolean correctLengthAtBuild) {
       this.correctLengthAtBuild = correctLengthAtBuild;
       return this;
     }
 
-    @Override
     public CustomTcpSackOption build() {
       return new CustomTcpSackOption(this);
     }
