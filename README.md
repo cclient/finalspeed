@@ -1,6 +1,6 @@
 __删除finalspeed对awt/swing的依赖，使之可以在没有x11的环境下，在命令行中直接运行__
 
-下载去除依赖后的 finalspeed点击 [finalspeed下载](https://github.com/fly9i/finalspeed/releases/download/v1.1.1/finalspeed.zip)
+下载去除依赖后的 finalspeed点击下载最新版本 [finalspeed下载](https://github.com/fly9i/finalspeed/releases)
 
 	具体方法:
 
